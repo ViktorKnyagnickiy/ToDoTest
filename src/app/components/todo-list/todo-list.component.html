@@ -1,0 +1,53 @@
+<h1>To-Do List</h1>
+
+<div style="display: flex; justify-content:center; align-items:center;">
+<div class="add-todo">
+  <input [(ngModel)]="newTodoTitle" placeholder="Нове завдання">
+  <select [(ngModel)]="newTodoPriority">
+    <option value="low">Низький</option>
+    <option value="medium">Середній</option>
+    <option value="high">Високий</option>
+  </select>
+  <button (click)="addTodo()">Додати</button>
+</div>
+</div>
+
+
+<div class="filters">
+  <button (click)="filter='all'">Всі</button>
+  <button (click)="filter='completed'">Виконані</button>
+  <button (click)="filter='pending'">Невиконані</button>
+</div>
+
+
+<div class="sorting">
+  <button (click)="sortBy='low'">Сортувати: Низький</button>
+  <button (click)="sortBy='medium'">Сортувати: Середній</button>
+  <button (click)="sortBy='high'">Сортувати: Високий</button>
+  <button (click)="sortBy=''">Скинути</button>
+</div>
+
+<hr>
+
+
+<ul>
+  <li *ngFor="let todo of filteredTodos">
+    <input type="checkbox" [(ngModel)]="todo.completed" (change)="toggleCompleted(todo)">
+    <span [class.completed]="todo.completed">{{ todo.title }} ({{ todo.priority }})</span>
+    <button class="edit-btn" (click)="startEdit(todo)">Редагувати</button>
+    <button (click)="deleteTodo(todo.id!)">Видалити</button>
+  </li>
+</ul>
+
+
+<div *ngIf="editingTodo" class="edit-form">
+  <h3>Редагування завдання</h3>
+  <input [(ngModel)]="editingTodo.title">
+  <select [(ngModel)]="editingTodo.priority">
+    <option value="low">Низький</option>
+    <option value="medium">Середній</option>
+    <option value="high">Високий</option>
+  </select>
+  <button (click)="saveEdit()">Зберегти</button>
+  <button (click)="cancelEdit()">Скасувати</button>
+</div>

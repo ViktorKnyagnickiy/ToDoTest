@@ -15,6 +15,9 @@
           "options": {
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
+            "polyfills": [
+              "zone.js"  // <<<< ВИПРАВЛЕННЯ ТУТ!
+            ],
             "assets": [
               {
                 "glob": "**/*",
@@ -86,5 +89,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "ccc97acc-c14f-4619-861d-d6092e657964"
   }
 }

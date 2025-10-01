@@ -1,0 +1,121 @@
+.todo-app {
+  max-width: 500px;
+  margin: 50px auto;
+  background: #f7f9fc;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.add-todo input, .add-todo select {
+  padding: 8px 10px;
+  margin-right: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.add-todo button {
+  padding: 8px 15px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.add-todo button:hover {
+  background-color: #45a049;
+}
+
+.filters, .sorting {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.filters button, .sorting button {
+  margin: 0 5px;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.filters button:hover, .sorting button:hover {
+  background-color: #ddd;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* 1. LI ВЖЕ МАЄ DISPLAY: FLEX ТА ALIGN-ITEMS: CENTER */
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Хоча тепер цей параметр менш важливий, він не заважає */
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+li .completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+/* 2. ВИРІВНЮЄМО КНОПКУ РЕДАГУВАТИ ВПРАВО */
+li .edit-btn {
+  margin-left: auto; /* ВИШТОВХУЄ КНОПКУ МАКСИМАЛЬНО ВПРАВО */
+  margin-right: 5px; /* Створюємо проміжок до кнопки Видалити */
+
+  border: none;
+  background: #3498db; /* Синій колір для редагування */
+  color: white;
+  border-radius: 6px;
+  padding: 5px 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+li .edit-btn:hover {
+  background: #2980b9;
+}
+
+/* 3. ОНОВЛЕННЯ ДЛЯ КНОПКИ ВИДАЛИТИ (без edit-btn) */
+li button {
+  /* Прибираємо старий margin-left: 5px, який був на всіх кнопках */
+  margin-left: 0;
+
+  border: none;
+  background: #ff4d4f;
+  color: white;
+  border-radius: 6px;
+  padding: 5px 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+li button:hover {
+  background: #e03b3e;
+}
+
+.edit-form {
+  margin-top: 20px;
+  padding: 15px;
+  background: #eef1f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
